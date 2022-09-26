@@ -1,6 +1,6 @@
 .container {
     position: relative;
-    width: 20em;
+    width: 15em;
     min-height: 1.5em;
     border: .05em solid #777;
     display: flex;
@@ -47,4 +47,25 @@
     translate:  0 25%;
     border: .25em solid transparent;
     border-top-color: #777;
+}
+
+.options {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    border: .05em solid #777;
+    border-radius: .25em;
+    overflow-y: auto;
+    max-height: 15em;
+    left: 0;
+    top: calc(100% + .25em);
+    background-color: white;
+    z-index: 100;
+}
+
+.option {
+    padding: .25em .5em;
+    cursor: pointer;
 }
