@@ -1,22 +1,27 @@
 import styles from './select.module.css'
 
-export function Select () {
+type TSelectOption = {
+    label: string;
+    value: string | number;
+}
+
+type TSelectProps = {
+    options: TSelectOption[]
+    value: TSelectOption;
+    onChange: (value: TSelectOption) => void
+}
+
+export function Select ({ options, value, onChange } : TSelectProps) {
     return (
         <div className={styles.container}>
-            <span className={styles.value}>First</span>
+            <span className={styles.value}>{value.label}</span>
             <button className={styles['clear-btn']}>&times;</button>
             <div className={styles.divider}></div>
             <div className={styles.caret}></div>
             <ul className={styles.options}>
-                <li className={styles.option}>First</li>
-                <li className={styles.option}>Second</li>
-                <li className={styles.option}>Third</li>
-                <li className={styles.option}>First</li>
-                <li className={styles.option}>Second</li>
-                <li className={styles.option}>Third</li>
-                <li className={styles.option}>First</li>
-                <li className={styles.option}>Second</li>
-                <li className={styles.option}>Third</li>
+                {options.map(option => (
+                    <li key={option.value} className={styles.option}>{option.label}</li>
+                ))}
             </ul>
         </div>
     )
