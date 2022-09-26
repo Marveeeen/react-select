@@ -11,7 +11,6 @@ Simple reusable react select component.
 - I created a Select component then hardcoded everything and set up mock data for styling.
 - I styled the select component using module.css.
 - Once done styling I add the functionality for single select only.
-- Organize my file and refactor some code for cleanup and easy to maintain.
 
 ## Optimizations
 - I also added another props that will determine if we want single select or multiple for flexibility.
