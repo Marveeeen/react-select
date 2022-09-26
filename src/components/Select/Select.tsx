@@ -1,26 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { TSelectProps, TSelectOption } from "./type";
+
 import styles from "./select.module.css";
 
-type TSelectOption = {
-  label: string;
-  value: string | number;
-};
-
-type TMultipleSelectProps = {
-  multiple: true;
-  value: TSelectOption[];
-  onChange: (value: TSelectOption[]) => void;
-};
-
-type TSingleSelectProps = {
-  multiple?: false;
-  value?: TSelectOption;
-  onChange: (value: TSelectOption | undefined) => void;
-};
-
-type TSelectProps = {
-  options: TSelectOption[];
-} & (TSingleSelectProps | TMultipleSelectProps);
 
 export function Select({ multiple, options, value, onChange }: TSelectProps) {
   const [isOpen, setIsopen] = useState(false);
